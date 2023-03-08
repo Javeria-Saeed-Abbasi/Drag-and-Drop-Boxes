@@ -1,0 +1,75 @@
+.wrapper{
+    width: 100%;
+    min-height: 500px;
+    background: #000;
+}
+.wrapper .left-box{
+    width: 80%;
+    min-height: 400px;
+    background: #e9e9e9be;
+}
+.wrapper .right-box{
+    width: 20%;
+    min-height: 400px;
+    background: #374c5291;
+}
+.wrapper .right-box button{
+width: 100%;
+}
+.wrapper .right-box .action-buttons{
+    transform: translateY(50%);
+    padding: 2rem;
+}
+
+.wrapper .left-box .drop-targets .box{
+    border: 1px solid #000;
+    width: 100px;
+    min-height: 100px;
+}
+@media only screen and (max-width: 1366px){
+    .wrapper .left-box{
+        width: 80%;
+        min-height: 400px;
+        background: #e9e9e9be;
+    }
+    .wrapper .right-box{
+        width: 20%;
+        min-height: 400px;
+        background: #374c5291;
+    }
+}
+@media only screen and (max-width: 1600px){
+    .wrapper .left-box{
+        width: 80%;
+        min-height: 400px;
+        background: #e9e9e9be;
+    }
+    .wrapper .right-box{
+        width: 20%;
+        min-height: 400px;
+        background: #374c5291;
+    }
+}
+@media only screen and (max-width: 414px){
+    /* .wrapper .right-box .action-buttons{
+        padding: unset;
+    } */
+    .wrapper .main-div{
+        /* flex-direction: column;
+        justify-content: center; */
+    } 
+    .wrapper .left-box{
+        width: 60%;
+        min-height: 400px;
+        background: #e9e9e9be;
+    }
+    .wrapper .right-box{
+        width: 40%;
+        min-height: 400px;
+        background: #374c5291;
+    }
+    .wrapper .right-box a button{
+        width: 100%;
+        
+        }
+}
