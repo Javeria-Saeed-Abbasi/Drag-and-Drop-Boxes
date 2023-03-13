@@ -41,6 +41,8 @@ width: 100%;
 .wrapper .box button{
     border-color: transparent;
     background: transparent;
+    width: 50px;
+    min-height: 50px;
 }
 /* .wrapper .left-box .drop-targets .box  button{
     border: 1px solid #000;
