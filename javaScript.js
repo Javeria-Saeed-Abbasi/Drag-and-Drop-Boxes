@@ -42,8 +42,8 @@ let arr = [];
 $(document).ready(function () {
   $('.box').click(function () {
     $('#exampleModal').modal('show')
-  })
-})
+  });
+});
 
 
 
@@ -68,7 +68,7 @@ function getBtnId(clicked_id) {
   bgColor.value = '#ffffff';
   btn1.style.backgroundColor = '#ffffff';
   btn1.innerHTML = '';
-
+  localStorage.setItem('id', id);
   // boxDivs.style.backgroundColor = '#ffffff';
   // boxDivs.innerHTML = '';
   // var btnId = $(btn1).attr("id");
@@ -109,6 +109,13 @@ function checkValue() {
   var value = inputvalue.value;
   console.log(value)
   button1.innerHTML = value;
+  // Store item
+  localStorage.setItem('inputVal', value);
+
+// Get Item
+  localStorage.getItem('id') // 'some item'
+  localStorage.getItem('inputVal') 
+
 }
 function onSubmit() {
   checkValue();
