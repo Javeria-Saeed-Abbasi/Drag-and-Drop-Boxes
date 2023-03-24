@@ -118,3 +118,31 @@ function onSubmit() {
 $('#submit').click(function () {
   $('#exampleModal').modal('hide')
 })
+
+ var element_pos = 0;    // Position of the newly created elements.
+    var iCnt = 0;
+    
+    $(document).ready(function() {
+
+        $(function() { $('#divContainer').draggable(); });
+        $(function() { $("#divResize").draggable().resizable(); });
+
+        // Create more DIV elements with absolute postioning.
+        $('#btClickMe').click(function() {
+
+            var dynamic_div = $(document.createElement('div')).css({
+                border: '1px dashed #fff', position: 'absolute', left: element_pos, 
+                top: $('#divContainer').height() + 20,
+                width: '120', height: '120', padding: '3', margin: '0', color:'#fff'
+            });
+
+            element_pos = element_pos + $('#divContainer').width() + 20;
+
+            $(dynamic_div).append('You can drag me too ddd');
+            
+            // Append the newly created DIV to the container.
+            $(dynamic_div).appendTo('#divContainer').draggable().resizable();
+
+            iCnt = iCnt + 1;
+        });
+    });
