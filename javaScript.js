@@ -1,37 +1,51 @@
 let id;
 let btn1;
 let btnId;
-let selectedId;
+
 $(document).ready(() => {
   $(function () {
-    var click = false;
     $('#box1,#box2,#box3,#box4').draggable().resizable();
-  });
+  })
   $( function() {
     $( "#leftbox" ).sortable();
   } );
 
   // document.ready col
 })
+
   //Add  boxes;
 var selectId= 5;
 let arr = [];
   function addBtn() {
-    // var firstbox= document.querySelector('.box');
-    // console.log(firstbox);
+  
     var newBox = $(
-      '<div class="box" id="box5" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="item" id="item4"><button id="b5" onclick="return checkValue("b5")"></button></div></div>',
+      `<div class="box ui-draggable ui-draggable-handle ui-resizable ui-sortable-handle" id="box${selectId}" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="return getBtnId('b${selectId}')"><div class="item" id="item${selectId}"><button id="b${selectId}" onclick="return checkValue("b${selectId})">Button${selectId}</button></div></div>`,
     )
-    var newBoxId = $(newBox).attr("id", "box"+selectId++);
+    var newBoxId = $(newBox).attr("id", "box"+selectId++).draggable().resizable();
     $('.box-left').append(newBoxId);
 
+  //   var i=0;
+  //   for (i = 1; i < 11; i++) {
+  //   if(i==1){
+  //   var newBox = $("#demo").after(
+  //     `<button type="button" id="demo1" class="btn box" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  //     Button1
+  //     </button>`,
+  //   )
+  //   // $("#demo").after('<div id="demo1"> <span class="value"></span> </div><br> Loading');
+  // }
+  //   else{
+  //   var newid = parseInt(i)-1;
+  //   var newBoxId = $(newBox).attr("id", "box"+selectId++);
+  //   $("#demo"+newid).after('<button type="button" id="demo'+parseInt(i)+'" class="btn box" data-bs-toggle="modal" data-bs-target="#exampleModal">Button1</button>');
+  //   $('.box-left').append(newBoxId);
+  //   // $("#demo"+newid).after('<div id="demo'+parseInt(i)+'"> <span class="value"></span> </div><br> Loading');
+  //   }
+  //   }
   }
- 
-
-
     //Delete Boxes;
     function deleteBtn() {
-      $('.box').remove()
+      $('#box1').remove()
     }
     // $('#deleteBoxes').click(function () {
     //   $('.box').remove()
@@ -77,9 +91,10 @@ function getBtnId(clicked_id) {
 
 //Change the color:
 function changeColor() {
-  var btn1 = document.getElementById(id)
+  var btn1 = document.getElementById(id);
   console.log(btn1);
-
+  var boxDivs = document.getElementById(id).parentElement.parentElement;
+  console.log(boxDivs + 'changecolorBoxDiv');
   // var boxDivs = document.getElementById(btn1).parentElement.parentElement;
   // console.log(boxDivs);
 
@@ -87,6 +102,7 @@ function changeColor() {
   console.log(bgColor.value)
 
   btn1.style.backgroundColor = bgColor.value;
+  boxDivs.style.backgroundColor = bgColor.value;
   if ((bgColor.value) == '#000000') {
     btn1.style.color = '#ffffff';
   } else {
@@ -126,30 +142,3 @@ $('#submit').click(function () {
   $('#exampleModal').modal('hide')
 })
 
- var element_pos = 0;    // Position of the newly created elements.
-    var iCnt = 0;
-    
-    $(document).ready(function() {
-
-        $(function() { $('#divContainer').draggable(); });
-        $(function() { $("#divResize").draggable().resizable(); });
-
-        // Create more DIV elements with absolute postioning.
-        $('#btClickMe').click(function() {
-
-            var dynamic_div = $(document.createElement('div')).css({
-                border: '1px dashed #fff', position: 'absolute', left: element_pos, 
-                top: $('#divContainer').height() + 20,
-                width: '120', height: '120', padding: '3', margin: '0', color:'#fff'
-            });
-
-            element_pos = element_pos + $('#divContainer').width() + 20;
-
-            $(dynamic_div).append('You can drag me too ddd');
-            
-            // Append the newly created DIV to the container.
-            $(dynamic_div).appendTo('#divContainer').draggable().resizable();
-
-            iCnt = iCnt + 1;
-        });
-    });

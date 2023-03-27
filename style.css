@@ -45,12 +45,12 @@ text-align: center;
 .wrapper .box button{
     border-color: transparent;
     background: transparent;
-    width: 100%;
+    width: 100px;
     position: absolute;
-    min-height: 100%;
+    min-height:  98px;
     pointer-events: none;
-
 }
+
 /* .wrapper .left-box .drop-targets .box  button{
     border: 1px solid #000;
     width: 100px;
